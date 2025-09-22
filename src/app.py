@@ -3,13 +3,13 @@ import pyray as ray
 from engine import Engine
 
 TITLE = "App"
-SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 800
+WINDOW_WIDTH, WINDOW_HEIGHT = 1000, 800
 
 
 class Application:
     """The Application Singleton"""
 
-    ray.init_window(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE)
+    ray.init_window(WINDOW_WIDTH, WINDOW_HEIGHT, TITLE)
     ray.set_target_fps(60)
 
     engine: Engine
