@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Main file",
+            "name": "Python Debugger: Main Entry",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/src/main.py", // src folder
