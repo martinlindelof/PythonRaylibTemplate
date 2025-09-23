@@ -69,7 +69,7 @@ class Engine:
     def load_fonts(self):
         #
         self.AdwaitaMonoNerdFont_Regular_24 = ray.load_font_ex(
-            "./resources/fonts/AdwaitaMono/AdwaitaMonoNerdFont-Regular.ttf",
+            "src/resources/fonts/AdwaitaMono/AdwaitaMonoNerdFont-Regular.ttf",
             24,
             None,
             250,
