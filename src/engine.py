@@ -2,6 +2,7 @@ import pyray as ray
 
 
 class Engine:
+    # 3d
     camera3d = ray.Camera3D()
     camera3d.position = ray.Vector3(10, 10, 10)
     camera3d.target = ray.Vector3(0, 0, 0)
@@ -9,25 +10,32 @@ class Engine:
     camera3d.projection = ray.CameraProjection.CAMERA_ORTHOGRAPHIC
     camera3d.fovy = 12.0
 
+    # 2d
+
     def __init__(self, app) -> None:
         self.app = app
         #
         self.load_fonts()
 
     def update(self):
+        #
         pass
 
     def draw(self):
+        #
         ray.begin_drawing()
         #
         ray.clear_background(ray.WHITE)
+        # debug text
         self.debug_text()
+        #
         self.draw_3d()
         self.draw_2d()
         #
         ray.end_drawing()
 
     def draw_2d(self):
+        #
         pass
 
     def draw_3d(self):
@@ -63,8 +71,8 @@ class Engine:
             ray.BLACK,
         )
 
-    fonts_texture_filter = ray.TextureFilter.TEXTURE_FILTER_BILINEAR
     AdwaitaMonoNerdFont_Regular_24: ray.Font
+    fonts_texture_filter = ray.TextureFilter.TEXTURE_FILTER_BILINEAR
 
     def load_fonts(self):
         #

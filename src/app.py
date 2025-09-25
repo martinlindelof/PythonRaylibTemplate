@@ -2,12 +2,12 @@ import pyray as ray
 
 from engine import Engine
 
-TITLE = "App"
-WINDOW_WIDTH, WINDOW_HEIGHT = 1000, 800
-
 
 class Application:
     """The Application Singleton"""
+
+    WINDOW_WIDTH, WINDOW_HEIGHT = 1000, 800
+    TITLE = "App"
 
     _instance: "Application | None" = None
     _initialized: bool = False
