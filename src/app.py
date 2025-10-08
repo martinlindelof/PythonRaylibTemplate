@@ -25,12 +25,10 @@ class Application:
     def __init__(self) -> None:
         if not self._initialized:
             self._initialized = True
-            self.delta_time = 0.0
             self.engine = Engine(app=self)
 
     def run(self):
         while not ray.window_should_close():
-            self.delta_time = ray.get_frame_time()
             self.engine.update()
             self.engine.draw()
         self.exit()

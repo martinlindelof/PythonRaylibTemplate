@@ -2,6 +2,9 @@ import pyray as ray
 
 
 class Engine:
+    # frame independent delta time
+    delta_time: float = 0.0
+
     # 3d
     camera3d = ray.Camera3D()
     camera3d.position = ray.Vector3(10, 10, 10)
@@ -18,6 +21,8 @@ class Engine:
         self.load_fonts()
 
     def update(self):
+        # update delta time
+        self.delta_time = ray.get_frame_time()
         #
         pass
 
@@ -52,11 +57,10 @@ class Engine:
         ray.end_mode_3d()
 
     def debug_text(self):
-        self.draw_text("Performance " + str(ray.get_fps()) + " fps", 0)
-        self.draw_text(
-            "Application Running " + str(ray.get_time())[0:5] + " seconds", 1
-        )
-        self.draw_text("AdwaitaMonoNerdFont_Regular_24", 2)
+        self.draw_text("Python Raylib Application Template", 0)
+        self.draw_text("Performance " + str(ray.get_fps()) + " fps", 1)
+        self.draw_text("Render Time " + str(self.delta_time)[3:5] + " ms", 2)
+        self.draw_text("AdwaitaMonoNerdFont_Regular_24", 3)
         pass
 
     DEBUG_LINEHEIGHT = 24
@@ -77,7 +81,7 @@ class Engine:
     def load_fonts(self):
         #
         self.AdwaitaMonoNerdFont_Regular_24 = ray.load_font_ex(
-            "src/resources/fonts/AdwaitaMono/AdwaitaMonoNerdFont-Regular.ttf",
+            "resources/fonts/AdwaitaMono/AdwaitaMonoNerdFont-Regular.ttf",
             24,
             None,
             250,
