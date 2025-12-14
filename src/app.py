@@ -18,6 +18,7 @@ class Application:
     engine: Engine
 
     def __new__(cls) -> "Application":
+        # Singleton impl
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
@@ -31,7 +32,7 @@ class Application:
         while not ray.window_should_close():
             self.engine.update()
             self.engine.draw()
-        self.exit()
+        self.exit()  # Exiting the loop
 
     def exit(self):
         # Exit code here
